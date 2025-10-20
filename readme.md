@@ -8,17 +8,17 @@
 
 # Kernel level
 * Linux KVM
-  * /dev/kvm
+  * /dev/kvm via ioctls
 * Apple Hypervisor Framework (HF)
   * API
 
 
-# Virtual Machine Managers (VMMs)
+# Hypervisors
 Manage CPU and memory, emulate a few key devices, and implement VirtIO backends
 
 * Apple Virtualization Framework (VF) API
   * Apple HF only, obviously
-  * Technically an API but its very high level so I'll call it a VMM too
+  * Technically an API but its very high level so I'll call it a hypervisor too
 * qemu
   * KVM or Apple HF
 * Rust VMM
@@ -34,7 +34,7 @@ Manage CPU and memory, emulate a few key devices, and implement VirtIO backends
   * Written in Rust but does not use Rust VMM
 
 
-# Tools that use other tools
+# Virtual Machine Managers (VMMs)
 * lima
   * qemu
   * vz (VF Golang library) https://github.com/Code-Hex/vz
@@ -61,7 +61,7 @@ PCIe standard to allow for sharing devices. It creates multiple Virtual Function
 Linux kernel feature. Uses the CPU IOMMU to safely pass device memory to a guest kernel. VFIO can pass a real device or an SR-IOV VF.
 
 # Paravirtualization and VirtIO
-VirtIO is a driver spec. Linux kernel contains one set of VirtIO device driver "frontends". They communicate with the "backends" hosted in the qemu process. This is much less work for the VMM than emulating a full device.
+VirtIO is a driver spec. Linux kernel contains one set of VirtIO device driver "frontends". They communicate with the "backends" hosted in the hypervisor process and is much less work than emulating a full device.
 
 # Emulation
 There are 4-5 devices that an OS needs to even boot and so these devices can't be paravirtualized and must be truly emulated
