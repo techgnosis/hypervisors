@@ -17,6 +17,9 @@ Use KVM or HF and implement VirtIO backends
   * https://github.com/cloud-hypervisor/cloud-hypervisor
   * https://github.com/firecracker-microvm/firecracker
   * https://github.com/google/crosvm
+* Microsoft OpenVMM
+  * https://github.com/microsoft/openvmm
+  * Written in Rust but does not use Rust VMM
 
 
 # VM Managers (VMMs)
@@ -37,8 +40,15 @@ Use KVM or HF and implement VirtIO backends
   * https://libvirt.org/manpages/index.html#modular-driver-daemons
 
 
-# VirtIO
+# Paravirtualization and VirtIO
 VirtIO is a driver spec. Linux kernel contains one set of VirtIO device driver "frontends". They communicate with the "backends" hosted in the qemu process. This is much less work for qemu than emulating a full device.
+
+# Emulation
+There are 4-5 devices that an OS needs to even boot and so these devices can't be paravirtualized and must be truly emulated
+* Keyboard controller
+* Timer
+* Serial port
+* Interrupt controllers
 
 
 # Ignoring
