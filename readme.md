@@ -45,3 +45,4 @@ VirtIO is a driver spec. Linux kernel contains one set of VirtIO device driver "
 * Windows
 * Oracle
 * VMWare
+* Canonical Multipass
