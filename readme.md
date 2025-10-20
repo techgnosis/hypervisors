@@ -1,6 +1,6 @@
 # Hardware level
 * Intel VT-x and AMD-V
-  * Creates a new privilege level (root mode) with more access than ring 0. The VMM is in root mode and so it can intercept specific assembly instructions from the guest OS. This allows for the guest OS instructions to be executed on the host except for specific instructions that need to be handled in alternative ways. Without this feature, all CPU execution had to be emulated because you could not safely execute every instruction.
+  * Creates a new privilege level (root mode) with more access than ring 0. The VMM is in root mode and so it can intercept specific assembly instructions from the guest OS. This allows for the guest OS instructions to be executed on the host except for specific instructions that need to be handled in alternative ways. Before this feature, all CPU execution had to be emulated because you could not safely execute every instruction.
   * Hardware managed memory mapping between host and guest. This was too costly before the hardware acceleration.
 * Intel VT-d and AMD-Vi
   * Creates a new hardware component called the IOMMU
