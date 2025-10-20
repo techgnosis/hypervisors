@@ -5,7 +5,6 @@
 * Apple Hypervisor Framework API
 
 
-
 # machine virtualization
 * Apple Virtualization Framework (VF)
 * qemu
@@ -21,3 +20,5 @@
 * UTM uses qemu or VF directly (UTM written in Swift)
 * libvirt uses a variety of backends
   * https://libvirt.org/manpages/index.html#modular-driver-daemons
+
+VirtIO is a driver spec. Linux kernel contains one set of VirtIO devices. They communicate with the backend provider of the driver, which is the machine process like qemu
