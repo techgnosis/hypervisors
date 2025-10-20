@@ -14,6 +14,7 @@
 
 # OS level
 * Apple Virtualization Framework (VF) API
+  * Uses Apple HF
 
 
 # VMMs (Virtual Machine Managers)
