@@ -1,15 +1,18 @@
-# CPU and memory virtualization
+# Hardware
 * Intel VT-x and AMD-V
+  * Creates a new privilege level (root mode) with more access than ring 0. The VMM is in root mode and so it can intercept specific assembly instructions from the guest OS or interrupts goint to the guest OS
+  * hardware managed memory mapping between host and guest
+* Intel VT-d and AMD-Vi
+  * IOMMU is a hardware component that allows for PCI Passthrough
 * Linux KVM
   * /dev/kvm
-* Apple Hypervisor Framework (HF) API
-* IOMMU
-  * Hardware component that allows for PCI Passthrough
-  * Intel VT-d and AMD-Vi
+* Apple Hypervisor Framework (HF)
+  * API
 
 
-# machine virtualization
-Use KVM or HF and implement VirtIO backends
+
+# VMMs (Virtual Machine Managers)
+Use KVM or HF, emulate a few key devices, and implement VirtIO backends
 
 * Apple Virtualization Framework (VF) API
 * qemu
@@ -25,7 +28,7 @@ Use KVM or HF and implement VirtIO backends
   * Written in Rust but does not use Rust VMM
 
 
-# VM Managers (VMMs)
+# Tools that use other tools
 * lima
   * qemu
   * vz (VF Golang library) https://github.com/Code-Hex/vz
@@ -44,7 +47,7 @@ Use KVM or HF and implement VirtIO backends
 
 
 # SR-IOV
-PCIe and device standard to allow for sharing PCIe devices. It creates "multiple" devices from one core device.
+PCIe and device standard to allow for sharing PCIe devices. It creates multiple Virtual Functions (VFs) from one Physical Function (PF).
 
 # VFIO
 Linux kernel feature. Uses the CPUs IOMMU to pass a device to a VM. VFIO can pass a real device or an SR-IOV VF.
