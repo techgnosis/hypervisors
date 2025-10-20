@@ -12,16 +12,13 @@
 * Apple Hypervisor Framework (HF)
   * API
 
-# OS level
-* Apple Virtualization Framework (VF) API
-  * Uses Apple HF
-
 
 # VMMs (Virtual Machine Managers)
 Use KVM or HF, emulate a few key devices, and implement VirtIO backends
 
+* Apple Virtualization Framework (VF) API
+  * Technically an API but its very high level so I'll call it a VMM too
 * qemu
-  * does not use VF on Apple
 * Rust VMM
   * https://github.com/rust-vmm/vm-virtio
   * https://github.com/rust-vmm/kvm
@@ -38,11 +35,12 @@ Use KVM or HF, emulate a few key devices, and implement VirtIO backends
   * qemu
   * vz (VF Golang library) https://github.com/Code-Hex/vz
 * UTM
-  * qemu or VF directly (UTM written in Swift)
+  * qemu
+  * VF directly (UTM written in Swift)
   * has `utmctl` as well
 * Tart
   * https://github.com/cirruslabs/tart
-  * tart only uses VF. It is Apple only
+  * tart only supports VF. It is Apple only
   * runs VMs from OCI images
 * Lume
   * Part of the Cua project
