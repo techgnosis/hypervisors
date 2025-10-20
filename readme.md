@@ -58,7 +58,7 @@ Manage CPU and memory, emulate a few key devices, and implement VirtIO backends
 PCIe standard to allow for sharing devices. It creates multiple Virtual Functions (VFs) from one Physical Function (PF). This is useful for saturating high-bandwidth devices like NICs and GPUs, as well as being more streamlined than traditional full device passthrough.
 
 # VFIO
-Linux kernel feature. Uses the CPUs IOMMU to pass a device to a VM. VFIO can pass a real device or an SR-IOV VF.
+Linux kernel feature. Uses the CPU IOMMU to safely pass device memory to a guest kernel. VFIO can pass a real device or an SR-IOV VF.
 
 # Paravirtualization and VirtIO
 VirtIO is a driver spec. Linux kernel contains one set of VirtIO device driver "frontends". They communicate with the "backends" hosted in the qemu process. This is much less work for the VMM than emulating a full device.
