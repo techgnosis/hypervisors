@@ -1,9 +1,10 @@
 # Hardware
 * Intel VT-x and AMD-V
   * Creates a new privilege level (root mode) with more access than ring 0. The VMM is in root mode and so it can intercept specific assembly instructions from the guest OS or interrupts goint to the guest OS
-  * hardware managed memory mapping between host and guest
+  * Hardware managed memory mapping between host and guest
 * Intel VT-d and AMD-Vi
-  * IOMMU is a hardware component that allows for PCI Passthrough
+  * Creates a new hardware component called the IOMMU
+  * IOMMU allows for PCI Passthrough
 * Linux KVM
   * /dev/kvm
 * Apple Hypervisor Framework (HF)
