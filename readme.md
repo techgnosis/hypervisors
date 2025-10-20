@@ -55,7 +55,7 @@ Manage CPU and memory, emulate a few key devices, and implement VirtIO backends
 
 
 # SR-IOV
-PCIe and device standard to allow for sharing PCIe devices. It creates multiple Virtual Functions (VFs) from one Physical Function (PF).
+PCIe standard to allow for sharing devices. It creates multiple Virtual Functions (VFs) from one Physical Function (PF). This is useful for saturating high-bandwidth devices like NICs and GPUs, as well as being more streamlined than traditional full device passthrough.
 
 # VFIO
 Linux kernel feature. Uses the CPUs IOMMU to pass a device to a VM. VFIO can pass a real device or an SR-IOV VF.
