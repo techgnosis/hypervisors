@@ -2,23 +2,46 @@
 * Intel VT-x and AMD-V
 * Linux KVM
   * /dev/kvm
-* Apple Hypervisor Framework API
+* Apple Hypervisor Framework (HF) API
 
 
 # machine virtualization
-* Apple Virtualization Framework (VF)
+Use KVM or HF and implement VirtIO backends
+
+* Apple Virtualization Framework (VF) API
 * qemu
   * does not use VF on Apple
-* https://github.com/rust-vmm/kvm
+* Rust VMM
+  * https://github.com/rust-vmm/vm-virtio
+  * https://github.com/rust-vmm/kvm
   * https://github.com/cloud-hypervisor/cloud-hypervisor
   * https://github.com/firecracker-microvm/firecracker
   * https://github.com/google/crosvm
 
 
 # VM Managers (VMMs)
-* lima uses qemu or vz (VF Golang library)
-* UTM uses qemu or VF directly (UTM written in Swift)
+* lima
+  * qemu
+  * vz (VF Golang library) https://github.com/Code-Hex/vz
+* UTM
+  * qemu or VF directly (UTM written in Swift)
+  * has `utmctl` as well
+* Tart
+  * https://github.com/cirruslabs/tart
+  * tart only uses VF. It is Apple only
+  * runs VMs from OCI images
+* Lume
+  * Part of the Cua project
+  * https://github.com/trycua/cua/blob/main/libs/lume/README.md
 * libvirt uses a variety of backends
   * https://libvirt.org/manpages/index.html#modular-driver-daemons
 
-VirtIO is a driver spec. Linux kernel contains one set of VirtIO devices. They communicate with the backend provider of the driver, which is the machine process like qemu
+
+# VirtIO
+VirtIO is a driver spec. Linux kernel contains one set of VirtIO device driver "frontends". They communicate with the "backends" hosted in the qemu process. This is much less work for qemu than emulating a full device.
+
+
+# Ignoring
+* Windows
+* Oracle
+* VMWare
