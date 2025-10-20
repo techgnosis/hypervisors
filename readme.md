@@ -61,7 +61,7 @@ PCIe and device standard to allow for sharing PCIe devices. It creates multiple 
 Linux kernel feature. Uses the CPUs IOMMU to pass a device to a VM. VFIO can pass a real device or an SR-IOV VF.
 
 # Paravirtualization and VirtIO
-VirtIO is a driver spec. Linux kernel contains one set of VirtIO device driver "frontends". They communicate with the "backends" hosted in the qemu process. This is much less work for qemu than emulating a full device.
+VirtIO is a driver spec. Linux kernel contains one set of VirtIO device driver "frontends". They communicate with the "backends" hosted in the qemu process. This is much less work for the VMM than emulating a full device.
 
 # Emulation
 There are 4-5 devices that an OS needs to even boot and so these devices can't be paravirtualized and must be truly emulated
