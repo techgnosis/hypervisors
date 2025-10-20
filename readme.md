@@ -6,18 +6,19 @@
   * Creates a new hardware component called the IOMMU
   * IOMMU allows for PCI Passthrough
 
-# OS level
+# Kernel level
 * Linux KVM
   * /dev/kvm
 * Apple Hypervisor Framework (HF)
   * API
 
+# OS level
+* Apple Virtualization Framework (VF) API
 
 
 # VMMs (Virtual Machine Managers)
 Use KVM or HF, emulate a few key devices, and implement VirtIO backends
 
-* Apple Virtualization Framework (VF) API
 * qemu
   * does not use VF on Apple
 * Rust VMM
