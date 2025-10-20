@@ -13,19 +13,23 @@
   * API
 
 
-# VMMs (Virtual Machine Managers)
-Use KVM or HF, emulate a few key devices, and implement VirtIO backends
+# Virtual Machine Managers (VMMs)
+Manage CPU and memory, emulate a few key devices, and implement VirtIO backends
 
 * Apple Virtualization Framework (VF) API
+  * Apple HF only, obviously
   * Technically an API but its very high level so I'll call it a VMM too
 * qemu
+  * KVM or Apple HF
 * Rust VMM
+  * KVM or Apple HF
   * https://github.com/rust-vmm/vm-virtio
   * https://github.com/rust-vmm/kvm
   * https://github.com/cloud-hypervisor/cloud-hypervisor
   * https://github.com/firecracker-microvm/firecracker
   * https://github.com/google/crosvm
 * Microsoft OpenVMM
+  * KVM and maybe HF, I don't know
   * https://github.com/microsoft/openvmm
   * Written in Rust but does not use Rust VMM
 
