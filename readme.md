@@ -45,6 +45,7 @@ Use KVM or HF, emulate a few key devices, and implement VirtIO backends
 * Lume
   * Part of the Cua project
   * https://github.com/trycua/cua/blob/main/libs/lume/README.md
+  * Only supports Apple VF
 * libvirt uses a variety of backends
   * https://libvirt.org/manpages/index.html#modular-driver-daemons
 
