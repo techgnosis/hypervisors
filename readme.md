@@ -4,7 +4,7 @@
   * Hardware managed memory mapping between host and guest. This was too costly before the hardware acceleration.
 * Intel VT-d and AMD-Vi
   * Creates a new hardware component called the IOMMU
-  * IOMMU allows for PCI Passthrough
+  * IOMMU manages memory mapping between a host PCIe device and a guest OS
 
 # Kernel level
 * Linux KVM
