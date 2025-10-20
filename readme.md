@@ -3,6 +3,9 @@
 * Linux KVM
   * /dev/kvm
 * Apple Hypervisor Framework (HF) API
+* IOMMU
+  * Hardware component that allows for PCI Passthrough
+  * Intel VT-d and AMD-Vi
 
 
 # machine virtualization
@@ -39,6 +42,12 @@ Use KVM or HF and implement VirtIO backends
 * libvirt uses a variety of backends
   * https://libvirt.org/manpages/index.html#modular-driver-daemons
 
+
+# SR-IOV
+PCIe and device standard to allow for sharing PCIe devices. It creates "multiple" devices from one core device.
+
+# VFIO
+Linux kernel feature. Uses the CPUs IOMMU to pass a device to a VM. VFIO can pass a real device or an SR-IOV VF.
 
 # Paravirtualization and VirtIO
 VirtIO is a driver spec. Linux kernel contains one set of VirtIO device driver "frontends". They communicate with the "backends" hosted in the qemu process. This is much less work for qemu than emulating a full device.
